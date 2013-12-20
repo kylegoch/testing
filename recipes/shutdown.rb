@@ -1,6 +1,7 @@
 # Testing for OpsWorks
 # Shutdowns an OpsWorks Instance 30 minutes from being executed.
 
-deathtime = (1 + Random.new(10)).to_s
+ddeathhour = (10 + Random.new(1)).to_s
+deathminute = (0 + Random.new(59)).to_s
 
-shutdown = `sudo shutdown -P #{deathtime}`
+cron = `cat <(crontab -l) <(echo "#{deathminute} #{deathhour} * * * /sbin/shutdown -P now") | crontab -`
