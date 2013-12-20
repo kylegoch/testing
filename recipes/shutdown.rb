@@ -5,4 +5,7 @@
 #deathminute = (0 + Random.rand(59)).to_s
 #{deathminute}
 
-cron = `cat <(crontab -l) <(echo "*/2 * * * * /sbin/shutdown -P now") | crontab -`
+deathhour = (10 + rand(0..2)).to_s
+deathminute = (0 + rand(0..59)).to_s
+
+cron = `( crontab -l ;  echo "#{deathminute} #{deathhour} * * * /sbin/shutdown -P now" ) | crontab`
