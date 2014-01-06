@@ -8,4 +8,4 @@
 #deathhour = (10 + rand(0,2)).to_s
 #deathminute = (0 + rand(0,59)).to_s
 
-cron = `( crontab -l ;  echo "*/20 * * * * /sbin/shutdown -P now" ) | crontab`
+cron = `( crontab -l ;  echo "#{deathhour} #{deathminute} * * * /sbin/shutdown -P now" ) | crontab`
