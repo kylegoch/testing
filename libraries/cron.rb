@@ -1,4 +1,10 @@
 #Sends the Cron Job
 
-deathhour = (10 + rand(2)).to_s
-deathminute = (0 + rand(59)).to_s
+
+def deathhour 
+	return (10 + rand(2)).to_s
+end
+
+def deathminute
+	return (0 + rand(59)).to_s
+end
